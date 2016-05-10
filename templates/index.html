@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}
+ahoi!
+{% endblock %}
+{% block body %}
+	<ul class="posts">
+	{% if authorized %}
+	<li>
+		<h2>
+			<ul class="admin">
+				<li class="admin"><a class="button del" href="{{ url_for('logout') }}">Logout</a></li>
+				<li class="admin"><a class="button new" href="{{ url_for('write_entry', context='project') }}">Create Project</a></li>
+				<li class="admin"><a class="button new" href="{{ url_for('write_entry', context='blog') }}">Create Post</a></li>
+			</ul>
+		</h2>
+	</li>
+	{% endif %}
+
+	{% for post in posts.items %}
+		{% include 'chunks/fancypost.html' %}
+	{% else %}
+		<li class="ruler"></li>
+		<li><em>Unbelievable. No posts on page {{ page }} so far</li>
+	{% endfor %}
+		<li class="ruler"></li>
+	</ul>
+	{% if posts.has_next or posts.has_prev %}
+		<div class="pagenav">
+		{% if posts.has_next %}
+			<a href="{{ url_for('index', page = posts.next_num) }}">next →</a>
+		{% endif %}
+		{% if posts.has_prev %}
+			<a href="{{ url_for('index', page = posts.prev_num) }}">← prev</a>
+		{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}

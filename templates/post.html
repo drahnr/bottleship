@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}
+Post {{post.title}}
+{% endblock %}
+{% block body %}
+<ul>
+	{% include 'chunks/fancypost.html' %}
+	<li class="ruler"></li>
+</ul>
+{% endblock %}

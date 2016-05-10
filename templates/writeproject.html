@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.active %}
+    <form action="{{ url_for('write_entry_add',context='project') }}" method="post" class="entry-form">
+      <dl>
+        <dt>Projectname:
+        <dd><input type="text" size=30 name="name">
+        <dt>ReadMe:
+        <dd><textarea name="readme" rows=5 cols=40></textarea>
+        <dt>Team:
+        <dd><input type="text" size=50 name="team">
+        <dt>slug:
+        <dd><input type="text" size=30 name="slug">
+        <dd><input type="submit">
+      </dl>
+    </form>
+  {% endif %}
+{% endblock %}

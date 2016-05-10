@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+Search
+{% endblock %}
+{% block body %}
+	<h3>Search Results for '{{ searchwords }}'</h3>
+	<ul class="posts">
+	{% for post in posts.items %}
+		<li class="post">{% include 'chunks/fancypost.html' %}</li>
+	{% else %}
+		<li class="ruler"></li>
+		<li><em>Unbelievable. No results.</em></li>
+	{% endfor %}
+		<li class="ruler"></li>
+	</ul>
+	{% if posts.has_next or posts.has_prev %}
+	<div class="pagenav">
+	{% if posts.has_next %}
+		<a href="{{ url_for('search', page = posts.next_num) }}">next →</a>
+	{% endif %}
+	{% if posts.has_prev %}
+		<a href="{{ url_for('search', page = posts.prev_num) }}">← prev</a>
+	{% endif %}
+	</div>
+	{% endif %}
+{% endblock %}

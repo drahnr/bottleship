@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /write/post
+Disallow: /write/project
+Disallow: /write/entry
+Disallow: /login
+Disallow: /logout
+

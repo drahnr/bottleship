@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}
+Archive
+{% endblock %}
+{% block body %}
+	<ul class="posts">
+	{% for year,posts in postmap | dictsort | reverse %}
+		<li class="ruler"></li>
+		<li class="post">
+			<h3>
+				<a href="{{ url_for('archive', year=year) }}"> {{ year }}</a>
+			</h3>
+
+			<ul class="posts">
+			{% for post in posts %}
+				<li class="post">
+					<a href="{{ url_for('blog', slug=post.slug) }}">{{ post.title }}</a>
+				</li>
+			{% endfor %}
+			</ul>
+		</li>
+	{% else %}
+		<li class="ruler"></li>
+		<li><em>Unbelievable. No posts at all</em></li>
+	{% endfor %}
+		<li class="ruler"></li>
+	</ul>
+{% endblock %}

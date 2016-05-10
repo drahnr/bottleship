@@ -1,0 +1,14 @@
+<li class="ruler">
+	{{ post.date |datetimeformat }}
+</li>
+<li class="post">
+	<h2><a href="{{ url_for('blog', slug = post.slug) }}">{{ post.title }}</a>
+	{% if authorized %}
+		<ul class="admin">
+			<li class="admin"><a class="button del" href="{{ url_for('delete_confirm_page', slug=post.slug) }}">delete</a></li>
+			<li class="admin"><a class="button edit" href="{{ url_for('edit_entry', context='blog', slug=post.slug) }}">edit</a></li>
+		</ul>
+	{% endif %}
+	</h2>
+	{{ post.html |safe }}
+</li>

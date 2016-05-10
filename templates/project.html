@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}
+Project {{project.name}}
+{% endblock %}
+{% block body %}
+<ul>
+	{% include 'chunks/fancyproject.html' %}
+	<li class="ruler"></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,298 @@
+html, body, div, p, nav, ul, li{
+	font-family: 'DejaVu Serif','Times New Roman';
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style-position: inside;
+	list-style-type: none;
+}
+
+
+h1 {
+	padding: 0;
+	margin: 0;
+}
+h2, h3, h4, h5, h6 {
+	color: black;
+	padding: 0.5em 0 0.5em 0;
+	margin: 0;
+}
+
+
+
+
+.project ul,
+.entry ul,
+.post ul,
+.project ol,
+.entry ol,
+.post ol {
+	list-style-type: circle;
+	list-style-position: inside;
+	margin: 1em 0em 1em 0.5em;
+}
+
+div.page,
+div.projects,
+div.entries,
+div.posts {
+	margin: 0;
+	padding: 1.75em 0 0 0;
+}
+
+.project,
+.entry,
+.post,
+.legal {
+	display: block;
+	font-size: 1.0em;
+	line-height: 1.2em;
+	margin: 0.25em 1.25em;
+}
+.project p,
+.entry p,
+.post p{
+	margin-bottom: 0.75em;
+}
+
+
+html, body {
+	background-color: #fcfcfc;
+}
+
+::selection {
+	color: white;
+	background: #c22;
+}
+::-moz-selection {
+	color: white;
+	background: #c22;
+}
+
+a,
+a:visited,
+a:active {
+	color: #c22;
+	text-decoration: none;
+}
+a:hover {
+	color: #c22;
+	text-decoration: underline;
+}
+
+.entry hr {
+	color: #ccc;
+	border-style: none none dotted;
+}
+
+
+
+ul.flashes {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	color: white;
+	font-family: Arial;
+	font-weight: bold;
+}
+ul.flashes li {
+	padding-left: 2em;
+	background-color: #f90;
+	border-bottom: 1px solid white;
+	line-height: 2;
+}
+
+
+
+
+nav h1{
+	color: #666;
+	font-weight: bold;
+	font-size: 5em;
+	text-align: center;
+	margin: 0;
+}
+
+
+nav ul{
+	display: block;
+	font-size: 1.5em;
+	font-weight: normal;
+	list-style-type: none;
+	text-align: center;
+}
+nav ul > li {
+	display: inline-block;
+	border-width: 0;
+	padding: 0.2em 0.5em;
+}
+
+nav ul > li > a {
+}
+
+
+/* just for input styling */
+
+input.holo[type='text'] {
+	/* You can set width to whatever you like */
+	width: 7em;
+	margin: 0;
+	font-family: inherit;
+	font-size: 0.9em;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	border: none;
+	background: bottom left linear-gradient(#c22, #c22) no-repeat, bottom center linear-gradient(#e32, #e32) repeat-x, bottom right linear-gradient(#e32, #e32) no-repeat;
+	background-size: 1px 6px, 1px 1px, 1px 6px;
+}
+
+input.holo[type='text']:hover,
+input.holo[type='text']:focus {
+	background: bottom left linear-gradient(#c22, #c22) no-repeat, bottom center linear-gradient(#c22, #c22) repeat-x, bottom right linear-gradient(#c22, #c22) no-repeat;
+	background-size: 1px 6px, 1px 1px, 1px 6px;
+}
+
+textarea,
+text {
+	width: 642px;
+	min-width: 642px;
+	max-width: 642px;
+}
+
+textarea {
+	height: 25em;
+};
+
+
+dl,
+dd,
+dt {
+	margin: 0;
+}
+
+
+
+.content {
+	display:block;
+	width: 650px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	background-color: #fdfdfd;
+	border: 1px solid #e7e7e7;
+	border-top: 0;
+}
+.pagenav {
+	margin-top: 2em;
+	text-align: center;
+}
+
+
+kbd {
+	display: inline-block;
+	margin: 0 0.1em;
+	padding: 0.1em 0.3em;
+	background-color: #f4f4f4;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15), 0px 0px 0px 1px #fff inset;
+	font-size: 0.8em;
+	line-height: 1.4;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+hr {
+	width: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	border-color: gray;
+	border-style: dotted none none none;
+	border-width: 4px 0 0 0 ;
+}
+
+
+ul.admin {
+	text-align: center:
+}
+
+li.admin {
+	display: inline-block;
+	float: right;
+}
+
+a.button {
+	color: white;
+	margin: 0 0.1em;
+	padding: 0.1em 0.3em;
+	border-radius: 2px;
+	font-size: 0.4em;
+	font-family: "Bree Serif", "Vollkorn", "Bitter", serif;
+	line-height: 1.4;
+	text-decoration: none;
+	background-color: #666;
+}
+
+a:active.button,
+a:visited.button,
+a:link.button {
+	color: white;
+	text-decoration: none;
+	background-color: #666;
+}
+
+
+a:hover.button {
+	background-color: #fcaf3e;
+}
+
+a:hover.button.new {
+	background-color: #40bf53;
+}
+
+a:hover.button.del {
+	background-color: #E0645C;
+}
+
+a:hover.button.edit {
+	background-color: #2DB6CF;
+}
+
+
+/********************/
+
+.ruler {
+	color: white;
+	font-weight: bold;
+	font-size: 1.0em;
+	text-align: right;
+	line-height: 1.6em;
+
+	display: block;
+	background-color: #efefef;
+
+	border-width: 1px 0;
+	border-color: #e9e9e9;
+	border-style: solid;
+
+	height: 1em;
+	width: 650px;
+	padding: 0.1em;
+	margin: 1em 0em;
+}
+
+li.ruler {
+	margin: 0;
+	padding: 0;
+}
+
+/**************/
+
+.footer {
+	font-size: 0.5em;
+	text-align: center;
+	padding: 2em;
+}

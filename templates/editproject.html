@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}
+Edit {{entry.title}}
+{% endblock %}
+{% block body %}
+	{% if session.active %}
+		{% if entry %}
+		<form action="{{ url_for('edit_entry_update',context='project',slug=entry.slug) }}" method="POST" class="entry-form">
+			<dl>
+				<dt>Title:
+				<dd><input type="text" size=30 name="name" value="{{ entry.name }}">
+				<dt>ReadMe:
+				<dd><textarea name="readme" rows=5 cols=40>{{entry.readme}}</textarea>
+				<dt>Slug:
+				<dd><input type="text" size=30 name="slug" value="{{ entry.slug }}">
+				<dd><input type="submit" value="Update">
+			</dl>
+		</form>
+		{% else %}
+			<p> Sure that entry actually exists?</p>
+		{% endif %}
+	{% endif %}
+{% endblock %}

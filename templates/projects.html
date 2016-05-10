@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}
+Projects
+{% endblock %}
+{% block body %}
+	<ul>
+	{% for project in projects.items %}
+		<li class="project">{% include 'chunks/fancyproject.html' %}</li>
+	{% else %}
+		<li class="ruler"></li>
+		<li><em>Unbelievable. No projects on page {{ page }} so far</em></li>
+	{% endfor %}
+		<li class="ruler"></li>
+	</ul>
+	{% if projects.has_next or projects.has_prev %}
+		<div class="pagenav">
+		{% if projects.has_next %}
+			<a href="{{ url_for('projects', project = projects.next_num) }}">next →</a>
+		{% endif %}
+		{% if projects.has_prev %}
+			<a href="{{ url_for('projects', project = projects.prev_num) }}">← prev</a>
+		{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}
